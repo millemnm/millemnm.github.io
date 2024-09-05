@@ -10916,7 +10916,6 @@ p {
     border: none;
     background-color: rgba(33, 37, 41, 0.6);
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-    transition: background-color 0.5s ease-in-out, padding 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
     font-size: 1.5em;
@@ -10930,7 +10929,6 @@ p {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: rgba(33, 37, 41, 0.95);
-    transition: background-color 0.5s ease-in-out, padding 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
