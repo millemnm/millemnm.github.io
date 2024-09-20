@@ -49,4 +49,29 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    // Sort list function
+    function sortListsAlphabetically(listIds) {
+        if (!Array.isArray(listIds)) {
+            listIds = [listIds];  // Ensure listIds is an array if only a single ID is passed
+        }
+
+        // Loop through each list ID
+        listIds.forEach(listId => {
+            const list = document.getElementById(listId);
+            if (list) {
+                const items = Array.from(list.querySelectorAll('li'));
+
+                // Sort items alphabetically by their text content
+                items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+
+                // Clear the list and append sorted items
+                list.innerHTML = '';
+                items.forEach(item => list.appendChild(item));
+            }
+        });
+    }
+
+    // Call the sortListsAlphabetically function when DOM is loaded
+    sortListsAlphabetically(['meat-list', 'chicken-list', 'fish-list', 'chip-list', 'nut-list', 'jerky-list', 'pasta-list', 'rice-list', 'salad-list', 'dip-list', 'german-list', 'euro-list', 'italian-list', 'asia-list', 'spanish-list', 'mexican-list', 'special-list', 'funct-list']); // Add the IDs of the lists you want to sort here
 });
