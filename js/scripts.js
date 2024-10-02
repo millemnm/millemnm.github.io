@@ -73,5 +73,8 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     // Call the sortListsAlphabetically function when DOM is loaded
-    sortListsAlphabetically(['meat-list', 'chicken-list', 'fish-list', 'chip-list', 'nut-list', 'jerky-list', 'pasta-list', 'rice-list', 'salad-list', 'dip-list', 'german-list', 'euro-list', 'italian-list', 'asia-list', 'spanish-list', 'mexican-list', 'special-list', 'funct-list']); // Add the IDs of the lists you want to sort here
+    sortListsAlphabetically(['meat-list', 'chicken-list', 'fish-list', 'chip-list', 'nut-list', 'jerky-list', 'pasta-list', 'rice-list', 'salad-list', 'dip-list', 'german-list', 'euro-list', 'italian-list', 'asia-list', 'spanish-list', 'mexican-list', 'special-list', 'funct-list', 'sauces-list', 'rubs-list', 'sausage-list','marinades-list', 'whole-spices-list', 'ground-spices-list', 'cracked-spices-list', 'minced-spices-list', 'special-seasonings-list']); // Add the IDs of the lists you want to sort here
+
 });
+
+

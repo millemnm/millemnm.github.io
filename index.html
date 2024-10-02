@@ -390,60 +390,38 @@
                         At First Spice, we are an extension of your product development team. We are also trouble shooters who work with you to determine potential causes and solutions to your manufacturing questions. From fat separation to discoloration, we are here to help you. We look forward to hearing from you.
                     </h3>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <!-- Replacing SB Forms with your previous form processing script -->
+                <form id="contactForm" method="post" action="send_form_email.php">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <input class="form-control" name="full_name" type="text" placeholder="Your Full Name *" required />
+                            </div>
+                            <div class="form-group">
+                                <!-- Last Name input-->
+                                <input class="form-control" name="company" type="text" placeholder="Your Company *" required />
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                <input class="form-control" name="email" type="email" placeholder="Your Email *" required />
                             </div>
-                            <div class="form-group mb-md-0">
+                            <div class="form-group">
                                 <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                <input class="form-control" name="phone" type="tel" placeholder="Your Phone *" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                <textarea class="form-control" name="comments" placeholder="Your Message *" required></textarea>
                             </div>
                         </div>
                     </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button>
+                    </div>
                 </form>
             </div>
         </section>
@@ -710,58 +688,78 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase text-center">Meat Industry</h2><br>
-                                    <img class="img-fluid d-block mx-auto rounded-img" src="assets/img/portfolio/1.jpg" alt="..."/>
-                                    <ul id="meat-list" style="list-style-type: none; padding: 0; display: flex; flex-direction: column; align-items: center; custom-list-line-spacing;">
-                                        <li>APPLE SPICE SEASONING</li>
-                                        <li>BBQ GARNISH SEASONING</li>
-                                        <li>BAR-B-QUE MARINADE</li>
-                                        <li>CAJUN MARINADE</li>
-                                        <li>CAJUN GARNISH SEASONING</li>
-                                        <li>FAJITA SEASONING W/ OR W/O MSG</li>
-                                        <li>HAWAIIAN MARINADE</li>
-                                        <li>COURSE ITALIAN RUB SEASONING</li>
-                                        <li>HERBS DE PROVENCE</li>
-                                        <li>FAJITA GARNISH SEASONING</li>
-                                        <li>HONEY DIJON MARINADE</li>
-                                        <li>HERB GARNISH SEASONING RUB</li>
-                                        <li>ITALIAN STYLE MARINADE</li>
-                                        <li>LEMON DILL SEASONING RUB</li>
-                                        <li>LEMON PEPPER MARINADE W/ OR W/O MSG</li>
-                                        <li>MONTREAL RUB SEASONING</li>
-                                        <li>NATURAL BEER FLAVOR RUB</li>
-                                        <li>LIME CILANTRO MARINADE</li>
-                                        <li>ONION BASE RUB SEASONING</li>
-                                        <li>PEPPERCORN SAUCE</li>
-                                        <li>PORCHETTA RUB SEASONING</li>
-                                        <li>SOUTHWEST SEASONING</li>
-                                        <li>SWEET ORIENTAL MARINADE</li>
-                                        <li>TERIYAKI MARINADE</li>
-                                        <li>TUSCANY FLAVOR MARINADE</li>
-                                        <li>GREEK SAUSAGE SEASONING</li>
-                                        <li>MEXICAN SAUSAGE SEASONING</li>
-                                        <li>JALAPENO SAUSAGE SEASONING</li>
-                                        <li>EXTRA HOT JALAPENO SAUSAGE SEASONING</li>
-                                        <li>SPICY HOT SANTA FE STYLE SAUSAGE SEASONING</li>
-                                        <li>CHORIZO SEASONING (MILD)</li>
-                                        <li>CHORIZO SEASONING (HOT)</li>
-                                        <li>SMOKED CHORIZO SAUSAGE SEASONING</li>
-                                        <li>HAWAIIAN STYLE SAUSAGE SEASONING</li>
-                                        <li>SWEET ITALIAN SAUSAGE SEASONING</li>
-                                        <li>HUNTER SAUSAGE SEASONING</li>
-                                        <li>READYMIX WINE SAUSAGE SEASONING</li>
-                                        <li>GARLIC SAUSAGE SEASONING</li>
-                                        <li>DANISH SAUSAGE SEASONING</li>
-                                        <li>LAMB SAUSAGE SEASONING</li>
-                                        <li>CURRY LAMB SAUSAGE SEASONING</li>
-                                        <li>TURKEY POLISH SAUSAGE SEASONING</li>
-                                        <li>TURKEY BREAKFAST SAUSAGE SEASONING</li>
-                                        <li>BULGOGI MARINADE</li>
-                                        <li>BARBACOA</li>
-                                        <li>BURGUNDY PEPPER MARINADE</li>
-                                        <li>BIRRIA STYLE RUB</li>
-                                        <li>AU JU BEEF SEASONING</li>
-                                        <li>CHIMICHURRI</li>
-                                    </ul>
+                                    <img class="img-fluid d-block mx-auto rounded-img" src="assets/img/portfolio/1.jpg" alt="..." />
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h3>Sausage Seasonings</h3>
+                                                <ul id="sausage-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>CHORIZO SEASONING (HOT)</li>
+                                                    <li>CHORIZO SEASONING (MILD)</li>
+                                                    <li>CURRY LAMB SAUSAGE SEASONING</li>
+                                                    <li>DANISH SAUSAGE SEASONING</li>
+                                                    <li>EXTRA HOT JALAPENO SAUSAGE SEASONING</li>
+                                                    <li>GARLIC SAUSAGE SEASONING</li>
+                                                    <li>GREEK SAUSAGE SEASONING</li>
+                                                    <li>HAWAIIAN STYLE SAUSAGE SEASONING</li>
+                                                    <li>HUNTER SAUSAGE SEASONING</li>
+                                                    <li>JALAPENO SAUSAGE SEASONING</li>
+                                                    <li>LAMB SAUSAGE SEASONING</li>
+                                                    <li>MEXICAN SAUSAGE SEASONING</li>
+                                                    <li>READYMIX WINE SAUSAGE SEASONING</li>
+                                                    <li>SMOKED CHORIZO SAUSAGE SEASONING</li>
+                                                    <li>SPICY HOT SANTA FE STYLE SAUSAGE SEASONING</li>
+                                                    <li>SWEET ITALIAN SAUSAGE SEASONING</li>
+                                                    <li>TURKEY BREAKFAST SAUSAGE SEASONING</li>
+                                                    <li>TURKEY POLISH SAUSAGE SEASONING</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Rubs and Seasonings</h3>
+                                                <ul id="rubs-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>APPLE SPICE SEASONING</li>
+                                                    <li>BBQ GARNISH SEASONING</li>
+                                                    <li>BIRRIA STYLE RUB</li>
+                                                    <li>CAJUN GARNISH SEASONING</li>
+                                                    <li>CHIMICHURRI</li>
+                                                    <li>COURSE ITALIAN RUB SEASONING</li>
+                                                    <li>FAJITA GARNISH SEASONING</li>
+                                                    <li>FAJITA SEASONING W/ OR W/O MSG</li>
+                                                    <li>HERB GARNISH SEASONING RUB</li>
+                                                    <li>HERBS DE PROVENCE</li>
+                                                    <li>LEMON DILL SEASONING RUB</li>
+                                                    <li>MONTREAL RUB SEASONING</li>
+                                                    <li>NATURAL BEER FLAVOR RUB</li>
+                                                    <li>ONION BASE RUB SEASONING</li>
+                                                    <li>PORCHETTA RUB SEASONING</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Marinades</h3>
+                                                <ul id="marinades-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>BAR-B-QUE MARINADE</li>
+                                                    <li>BULGOGI MARINADE</li>
+                                                    <li>BURGUNDY PEPPER MARINADE</li>
+                                                    <li>CAJUN MARINADE</li>
+                                                    <li>HAWAIIAN MARINADE</li>
+                                                    <li>HONEY DIJON MARINADE</li>
+                                                    <li>ITALIAN STYLE MARINADE</li>
+                                                    <li>LEMON PEPPER MARINADE W/ OR W/O MSG</li>
+                                                    <li>LIME CILANTRO MARINADE</li>
+                                                    <li>SWEET ORIENTAL MARINADE</li>
+                                                    <li>TERIYAKI MARINADE</li>
+                                                    <li>TUSCANY FLAVOR MARINADE</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Sauces and Garnishes</h3>
+                                                <ul id="sauces-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>AU JU BEEF SEASONING</li>
+                                                    <li>PEPPERCORN SAUCE</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close
@@ -1047,7 +1045,7 @@
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-12">
+                            <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase text-center">Ethnic & Regional Seasonings</h2><br>
@@ -1127,7 +1125,6 @@
                                                     <li>TACO SEASONING</li>
                                                     <li>BIRRIA STYLE RUB</li>
                                                     <li>BARBACOA</li>
-
                                                 </ul>
                                             </div>
                                         </div>
@@ -1199,76 +1196,103 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase text-center">Specialty Spices</h2><br>
                                     <img class="img-fluid d-block mx-auto rounded-img" src="assets/img/portfolio/9.jpg" alt="..." />
-                                    <ul id="special-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
-                                        <li>ALLSPICE, CRACKED</li>
-                                        <li>MUSTARD, GROUND</li>
-                                        <li>ALLSPICE, GROUND</li>
-                                        <li>MUSTARD, WHOLE</li>
-                                        <li>ALLSPICE, WHOLE</li>
-                                        <li>NUTMEG, PURE GROUND</li>
-                                        <li>ANISE, GROUND</li>
-                                        <li>ONION, POWDER</li>
-                                        <li>ANISE, WHOLE</li>
-                                        <li>ONION, POWDER, TOASTED</li>
-                                        <li>BASIL, GROUND</li>
-                                        <li>ONION, CHOPPED</li>
-                                        <li>BASIL, WHOLE</li>
-                                        <li>ONION, CHOPPED, TOASTED</li>
-                                        <li>CARAWAY SEED, GROUND</li>
-                                        <li>ONION, GRANULATED</li>
-                                        <li>CARAWAY, WHOLE</li>
-                                        <li>ONION, MINCED</li>
-                                        <li>CARDAMON, GROUND</li>
-                                        <li>ONION, MINCED, TOASTED</li>
-                                        <li>CELERY, GROUND</li>
-                                        <li>OREGANO, CRUSHED</li>
-                                        <li>CELERY, ROOT POWDER</li>
-                                        <li>OREGANO, GROUND</li>
-                                        <li>CELERY, STALK & LEAF</li>
-                                        <li>OREGANO, WHOLE</li>
-                                        <li>CELERY, WHOLE SEED</li>
-                                        <li>PAPRIKA</li>
-                                        <li>CHILI POWDER, NY DARK</li>
-                                        <li>PAPRIKA, HOT</li>
-                                        <li>CINNAMON, GROUND</li>
-                                        <li>PARSLEY FLAKES</li>
-                                        <li>CLOVES, GROUND</li>
-                                        <li>PASTRAMI RUB</li>
-                                        <li>CLOVES, WHOLE</li>
-                                        <li>PEPPER, BLK BUTCHER</li>
-                                        <li>CORIANDER, CRACKED</li>
-                                        <li>PEPPER, BLK ITALIAN</li>
-                                        <li>CORIANDER, GROUND</li>
-                                        <li>PEPPER, BLK TABLE</li>
-                                        <li>CUMIN, GROUND</li>
-                                        <li>PEPPER, BLK FINE</li>
-                                        <li>CURRY POWDER</li>
-                                        <li>PEPPER, BLK WHOLE</li>
-                                        <li>DILL SEED, WHOLE</li>
-                                        <li>PEPPER, RED, CRUSHED</li>
-                                        <li>FENNEL SEED, CRACKED</li>
-                                        <li>PEPPER, RED, GROUND</li>
-                                        <li>FENNEL SEED, WHOLE</li>
-                                        <li>PEPPER, WHITE, GROUND</li>
-                                        <li>FENNEL SEED, GROUND</li>
-                                        <li>PEPPER, WHITE, WHOLE</li>
-                                        <li>GARLIC GRANULATED</li>
-                                        <li>PEPPER, RED & GREEN BELL</li>
-                                        <li>GARLIC POWDER</li>
-                                        <li>PICKLING SPICE, WHOLE</li>
-                                        <li>GARLIC, MINCED</li>
-                                        <li>ROSEMARY, GROUND</li>
-                                        <li>GINGER, GROUND</li>
-                                        <li>ROSEMARY, WHOLE</li>
-                                        <li>JUNIPER BERRIES, WHOLE</li>
-                                        <li>SAGE, RUBBED, DALMATION</li>
-                                        <li>MACE, COMPOSITE</li>
-                                        <li>THYME, GROUND</li>
-                                        <li>MACE, GROUND</li>
-                                        <li>THYME, WHOLE</li>
-                                        <li>MARJORAM, LEAF</li>
-                                        <li>TOMATO POWDER</li>
-                                    </ul>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h3>Ground Spices and Powders</h3>
+                                                <ul id="ground-spices-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>ALLSPICE, GROUND</li>
+                                                    <li>ANISE, GROUND</li>
+                                                    <li>BASIL, GROUND</li>
+                                                    <li>CARAWAY SEED, GROUND</li>
+                                                    <li>CARDAMON, GROUND</li>
+                                                    <li>CELERY, GROUND</li>
+                                                    <li>CINNAMON, GROUND</li>
+                                                    <li>CLOVES, GROUND</li>
+                                                    <li>CORIANDER, GROUND</li>
+                                                    <li>CUMIN, GROUND</li>
+                                                    <li>CURRY POWDER</li>
+                                                    <li>FENNEL SEED, GROUND</li>
+                                                    <li>GARLIC GRANULATED</li>
+                                                    <li>GARLIC POWDER</li>
+                                                    <li>GINGER, GROUND</li>
+                                                    <li>MACE, GROUND</li>
+                                                    <li>MUSTARD, GROUND</li>
+                                                    <li>NUTMEG, PURE GROUND</li>
+                                                    <li>ONION, GRANULATED</li>
+                                                    <li>ONION, POWDER</li>
+                                                    <li>ONION, POWDER, TOASTED</li>
+                                                    <li>OREGANO, GROUND</li>
+                                                    <li>PAPRIKA</li>
+                                                    <li>PAPRIKA, HOT</li>
+                                                    <li>PEPPER, BLK FINE</li>
+                                                    <li>PEPPER, RED, GROUND</li>
+                                                    <li>PEPPER, WHITE, GROUND</li>
+                                                    <li>ROSEMARY, GROUND</li>
+                                                    <li>SAGE, RUBBED, DALMATION</li>
+                                                    <li>THYME, GROUND</li>
+                                                    <li>TOMATO POWDER</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Whole Spices</h3>
+                                                <ul id="whole-spices-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>ALLSPICE, WHOLE</li>
+                                                    <li>ANISE, WHOLE</li>
+                                                    <li>BASIL, WHOLE</li>
+                                                    <li>CARAWAY, WHOLE</li>
+                                                    <li>CELERY, WHOLE SEED</li>
+                                                    <li>CLOVES, WHOLE</li>
+                                                    <li>CORIANDER, WHOLE</li>
+                                                    <li>DILL SEED, WHOLE</li>
+                                                    <li>FENNEL SEED, WHOLE</li>
+                                                    <li>JUNIPER BERRIES, WHOLE</li>
+                                                    <li>MUSTARD, WHOLE</li>
+                                                    <li>ONION, MINCED, TOASTED</li>
+                                                    <li>OREGANO, WHOLE</li>
+                                                    <li>PEPPER, BLK WHOLE</li>
+                                                    <li>PEPPER, WHITE, WHOLE</li>
+                                                    <li>PICKLING SPICE, WHOLE</li>
+                                                    <li>ROSEMARY, WHOLE</li>
+                                                    <li>THYME, WHOLE</li>
+                                                </ul><br>
+                                                <h3>Special Seasonings and Rubs</h3>
+                                                <ul id="special-seasonings-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>CELERY, ROOT POWDER</li>
+                                                    <li>CHILI POWDER, NY DARK</li>
+                                                    <li>MACE, COMPOSITE</li>
+                                                    <li>ONION, MINCED, TOASTED</li>
+                                                    <li>PEPPER, BLK BUTCHER</li>
+                                                    <li>PEPPER, BLK ITALIAN</li>
+                                                    <li​>PEPPER, BLK TABLE</li>
+                                                    <li>PEPPER, RED & GREEN BELL</li>
+                                                    <li>PASTRAMI RUB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Minced, Chopped, and Leaf Spices</h3>
+                                                <ul id="minced-spices-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>CELERY, STALK & LEAF</li>
+                                                    <li>GARLIC, MINCED</li>
+                                                    <li>MARJORAM, LEAF</li>
+                                                    <li>ONION, CHOPPED</li>
+                                                    <li>ONION, MINCED</li>
+                                                    <li>ONION, CHOPPED, TOASTED</li>
+                                                    <li>PARSLEY FLAKES</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Cracked and Crushed Spices</h3>
+                                                <ul id="cracked-spices-list" class="list-unstyled d-flex flex-column align-items-center custom-list-line-spacing">
+                                                    <li>ALLSPICE, CRACKED</li>
+                                                    <li>CORIANDER, CRACKED</li>
+                                                    <li>FENNEL SEED, CRACKED</li>
+                                                    <li>OREGANO, CRUSHED</li>
+                                                    <li>PEPPER, RED, CRUSHED</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close
