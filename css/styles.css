@@ -10901,9 +10901,10 @@ p {
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: #fff;
   letter-spacing: 0.0625em;
+  transition: font-size 0.3s ease-in-out;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #c10909;
@@ -10915,11 +10916,11 @@ p {
     padding-bottom: 1.2rem;
     border: none;
     background-color: rgba(33, 37, 41, 0.6);
-    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out, background-color 0.5s ease-in-out;
   }
   #mainNav .navbar-brand {
     font-size: 1.5em;
-    transition: font-size 0.3s ease-in-out;
+    transition: font-size 0.5s ease-in-out;
   }
   #mainNav .navbar-brand img {
     height: 6rem; /* Controls Size of navbar logo when on computer */
@@ -10929,9 +10930,11 @@ p {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: rgba(33, 37, 41, 0.95);
+    transition: background-color 0.5s ease-in-out;
   }
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.25em;
+  #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
+    font-size: 0.95rem;
+    transition: font-size 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
