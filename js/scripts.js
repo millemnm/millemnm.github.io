@@ -37,6 +37,17 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
+    // Close modal when clicking outside of the modal content
+    document.addEventListener('click', function (event) {
+        const modals = document.querySelectorAll('.modal.show'); // Get all active modals
+        modals.forEach(modal => {
+            const modalContent = modal.querySelector('.modal-content'); // Modal content
+            if (!modalContent.contains(event.target)) { // If click is outside modal content
+                bootstrap.Modal.getInstance(modal).hide(); // Close the modal using Bootstrap's hide method
+            }
+        });
+    });
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
