@@ -5393,7 +5393,7 @@ textarea.form-control-lg {
 }
 
 /* Existing media queries */
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .modal {
     --bs-modal-margin: 1.75rem;
     --bs-modal-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -5406,7 +5406,7 @@ textarea.form-control-lg {
   .modal-sm {
     --bs-modal-width: 300px;
   }
-}
+} */
 
 @media (min-width: 992px) {
   .modal-lg,
@@ -5422,28 +5422,51 @@ textarea.form-control-lg {
 }
 
 /* new media query for screens smaller than 576px */
+/* Adjustments for small phones (screen width up to 576px) */
 @media (max-width: 576px) {
-  /* Adjust modal title font size for smaller screens */
   .modal-title {
-    font-size: 1rem; /* Slightly smaller font */
-    white-space: normal; /* Allow wrapping */
-    word-wrap: break-word; /* Wrap long words at the end of the line */
-    overflow-wrap: break-word; /* Ensure wrapping for long words */
-    text-align: center; /* Center the title */
+    font-size: 1rem;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
   }
 
-  /* Increase modal width for small screens */
   .modal-dialog {
-    width: 100%; /* Use full width of the screen */
-    max-width: none; /* Remove any max-width restriction */
-    margin: 0 auto; /* Center the modal */
-    padding-left: 0.5rem; /* Add padding to prevent cutting on the right */
-    padding-right: 0.5rem; /* Add padding to prevent cutting on the right */
+    width: 95%; /* Take up 95% of the screen */
+    max-width: none;
+    margin: 0 auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
-  /* Optional: Adjust padding within modal */
   .modal-content {
     padding: 1rem;
+    width: 100%;
+  }
+}
+
+/* Adjustments for larger phones (screen width up to 768px) */
+@media (max-width: 768px) {
+  .modal-title {
+    font-size: 1.1rem; /* Slightly larger font for bigger screens */
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+
+  .modal-dialog {
+    width: 90%; /* Take up 90% of the screen on larger phones */
+    max-width: none;
+    margin: 0 auto;
+    padding-left: 1rem; /* Adjusted padding */
+    padding-right: 1rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    width: 100%;
   }
 }
 
