@@ -5422,7 +5422,7 @@ textarea.form-control-lg {
 }
 
 /* new media query for screens smaller than 576px */
-/* Adjustments for small phones (screen width up to 576px) */
+/* For small phones (screen width up to 576px) */
 @media (max-width: 576px) {
   .modal-title {
     font-size: 1rem;
@@ -5433,7 +5433,7 @@ textarea.form-control-lg {
   }
 
   .modal-dialog {
-    width: 95%; /* Take up 95% of the screen */
+    width: 98%; /* Take up nearly the full width of the screen */
     max-width: none;
     margin: 0 auto;
     padding-left: 0.5rem;
@@ -5446,10 +5446,10 @@ textarea.form-control-lg {
   }
 }
 
-/* Adjustments for larger phones (screen width up to 768px) */
+/* For larger phones and tablets (screen width up to 768px, including iPhone 13 Pro Max) */
 @media (max-width: 768px) {
   .modal-title {
-    font-size: 1.1rem; /* Slightly larger font for bigger screens */
+    font-size: 1.1rem; /* Slightly larger font for larger phones */
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -5457,10 +5457,10 @@ textarea.form-control-lg {
   }
 
   .modal-dialog {
-    width: 90%; /* Take up 90% of the screen on larger phones */
+    width: 96%; /* Increase the width to take up more of the screen */
     max-width: none;
     margin: 0 auto;
-    padding-left: 1rem; /* Adjusted padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
