@@ -5421,21 +5421,22 @@ textarea.form-control-lg {
   }
 }
 
-/* New media query for screens smaller than 576px */
+/* new media query for screens smaller than 576px */
 @media (max-width: 576px) {
   /* Adjust modal title font size for smaller screens */
   .modal-title {
-    font-size: 1rem; /* Slightly smaller font size */
-    white-space: normal; /* Allow text to wrap to the next line */
+    font-size: 1rem; /* Slightly smaller font */
+    white-space: normal; /* Allow wrapping */
+    word-wrap: break-word; /* Wrap long words at the end of the line */
+    overflow-wrap: break-word; /* Ensure wrapping for long words */
     text-align: center; /* Center the title */
-    word-break: break-word; /* Wrap long words at the end of the line */
   }
 
   /* Increase modal width for small screens */
   .modal-dialog {
-    width: 98%; /* Use almost the full width of the screen */
+    width: 100%; /* Use full width of the screen */
     max-width: none; /* Remove any max-width restriction */
-    margin: 0.5rem auto; /* Keep minimal margins on the sides */
+    margin: 0; /* No margins on the sides */
   }
 
   /* Optional: Adjust padding within modal */
