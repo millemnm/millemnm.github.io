@@ -5392,7 +5392,7 @@ textarea.form-control-lg {
   margin: calc(var(--bs-modal-footer-gap) * 0.5);
 }
 
-
+/* Existing media queries */
 @media (min-width: 576px) {
   .modal {
     --bs-modal-margin: 1.75rem;
@@ -5426,16 +5426,22 @@ textarea.form-control-lg {
   /* Adjust modal title font size for smaller screens */
   .modal-title {
     font-size: 1.2rem; /* Smaller font for mobile */
+    word-wrap: break-word; /* Ensure long words wrap properly */
+    text-align: center; /* Center the title for better aesthetics */
   }
 
-  /* Increase modal width by reducing margins on mobile */
+  /* Reduce margins to widen the modal */
   .modal-dialog {
-    max-width: 95%; /* Make modal take up most of the screen */
+    width: 95%; /* Take up 95% of the screen */
+    max-width: none; /* Remove any max-width limit */
     margin: 0.5rem auto; /* Minimal margins on the sides */
   }
+
+  /* Optional: Adjust padding within modal if necessary */
+  .modal-content {
+    padding: 1rem;
+  }
 }
-
-
 .modal-fullscreen {
   width: 100vw;
   max-width: none;
