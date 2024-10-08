@@ -5422,18 +5422,21 @@ textarea.form-control-lg {
 }
 
 /* New media query for screens smaller than 576px */
+/* Ensure titles stay on a single line */
 @media (max-width: 576px) {
   /* Adjust modal title font size for smaller screens */
   .modal-title {
-    font-size: 1.2rem; /* Smaller font for mobile */
-    word-wrap: break-word; /* Ensure long words wrap properly */
-    text-align: center; /* Center the title for better aesthetics */
+    font-size: 1rem; /* Slightly smaller font */
+    white-space: nowrap; /* Ensure the title does not wrap */
+    text-align: center; /* Center the title */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if the title is too long */
   }
 
-  /* Reduce margins to widen the modal */
+  /* Increase modal width for small screens */
   .modal-dialog {
-    width: 95%; /* Take up 95% of the screen */
-    max-width: none; /* Remove any max-width limit */
+    width: 98%; /* Increase modal width to almost the full screen */
+    max-width: none; /* Remove any max-width restrictions */
     margin: 0.5rem auto; /* Minimal margins on the sides */
   }
 
@@ -5442,6 +5445,7 @@ textarea.form-control-lg {
     padding: 1rem;
   }
 }
+
 .modal-fullscreen {
   width: 100vw;
   max-width: none;
