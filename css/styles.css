@@ -5373,7 +5373,7 @@ textarea.form-control-lg {
 
 /* Style for even list items */
 .modal-body ul li:nth-child(even) {
-  color: #999999; 
+  color: #888888; 
 }
 
 .modal-footer {
