@@ -5373,7 +5373,7 @@ textarea.form-control-lg {
 
 /* Style for even list items */
 .modal-body ul li:nth-child(even) {
-  color: #666666; /* Darker grey */
+  color: #999999; 
 }
 
 .modal-footer {
@@ -5422,25 +5422,23 @@ textarea.form-control-lg {
 }
 
 /* New media query for screens smaller than 576px */
-/* Ensure titles stay on a single line */
 @media (max-width: 576px) {
   /* Adjust modal title font size for smaller screens */
   .modal-title {
-    font-size: 1rem; /* Slightly smaller font */
-    white-space: nowrap; /* Ensure the title does not wrap */
+    font-size: 1rem; /* Slightly smaller font size */
+    white-space: normal; /* Allow text to wrap to the next line */
     text-align: center; /* Center the title */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+    word-break: break-word; /* Wrap long words at the end of the line */
   }
 
   /* Increase modal width for small screens */
   .modal-dialog {
-    width: 98%; /* Increase modal width to almost the full screen */
-    max-width: none; /* Remove any max-width restrictions */
-    margin: 0.5rem auto; /* Minimal margins on the sides */
+    width: 98%; /* Use almost the full width of the screen */
+    max-width: none; /* Remove any max-width restriction */
+    margin: 0.5rem auto; /* Keep minimal margins on the sides */
   }
 
-  /* Optional: Adjust padding within modal if necessary */
+  /* Optional: Adjust padding within modal */
   .modal-content {
     padding: 1rem;
   }
