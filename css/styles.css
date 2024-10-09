@@ -5393,7 +5393,7 @@ textarea.form-control-lg {
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 572px) {
   .modal {
       --bs-modal-width: 1000px;
       --bs-modal-padding: 0.5rem;
@@ -5436,7 +5436,7 @@ textarea.form-control-lg {
   }
 
   .modal h2 {
-    font-size: 2.5rem !important; /* Adjust this size as needed */
+    font-size: 2.5rem !important;
   }
 }
 
