@@ -5421,8 +5421,8 @@ textarea.form-control-lg {
   }
 }
 
-/* new media query for screens smaller than 576px */
-/* For small phones (screen width up to 576px) */
+/* new media query for screens smaller than 576px
+For small phones (screen width up to 576px)
 @media (max-width: 576px) {
   .modal-title {
     font-size: 1rem;
@@ -5433,7 +5433,7 @@ textarea.form-control-lg {
   }
 
   .modal-dialog {
-    width: 98%; /* Take up nearly the full width of the screen */
+    width: 98%; /* Take up nearly the full width of the screen 
     max-width: none;
     margin: 0 auto;
     padding-left: 0.5rem;
@@ -5446,10 +5446,10 @@ textarea.form-control-lg {
   }
 }
 
-/* For larger phones and tablets (screen width up to 768px, including iPhone 13 Pro Max) */
-@media (max-width: 768px) {
+/* For larger phones and tablets (screen width up to 768px, including iPhone 13 Pro Max)
+@media (max-width: 769px) {
   .modal-title {
-    font-size: 1.1rem; /* Slightly larger font for larger phones */
+    font-size: 1.1rem; /* Slightly larger font for larger phones
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -5457,7 +5457,7 @@ textarea.form-control-lg {
   }
 
   .modal-dialog {
-    width: 96%; /* Increase the width to take up more of the screen */
+    width: 96%; /* Increase the width to take up more of the screen
     max-width: none;
     margin: 0 auto;
     padding-left: 1rem;
@@ -5467,6 +5467,49 @@ textarea.form-control-lg {
   .modal-content {
     padding: 1rem;
     width: 100%;
+  }
+}  */
+
+@media (max-width: 576px) {
+  .modal {
+      --bs-modal-width: 1000px;
+      --bs-modal-padding: 0.5rem;
+      --bs-modal-margin: 0.5rem;
+      position: center;
+      top: 0;
+      left: 0;
+      z-index: var(--bs-modal-zindex);
+      display: none;
+      width: 100%; /* Maintain wide appearance */
+      max-width: calc(100% - 1rem);
+      height: 100vh;
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: scroll;
+      overflow-y: auto;
+      outline: 0;
+  }
+
+  .modal-dialog {
+      position: relative;
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden; /* Prevent content overflow */
+  }
+
+  .modal-content {
+      width: 100%;
+      padding: 1rem;
+      border-top-left-radius: 1rem; /* Apply the top-left bevel */
+      border-bottom-left-radius: 1rem; /* Apply the bottom-left bevel */
+      border-top-right-radius: 1rem; /* Fix: Explicitly apply the top-right bevel */
+      border-bottom-right-radius: 1rem; /* Fix: Explicitly apply the bottom-right bevel */
+      box-sizing: border-box;
+      overflow-x: hidden;
+      background-clip: padding-box; /* Ensure background respects padding and border-radius */
   }
 }
 
