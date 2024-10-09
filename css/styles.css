@@ -5434,6 +5434,10 @@ textarea.form-control-lg {
       overflow-x: hidden;
       background-clip: padding-box; /* Ensure background respects padding and border-radius */
   }
+
+  .modal h2 {
+    font-size: 2.5rem !important; /* Adjust this size as needed */
+  }
 }
 
 @media (min-width: 992px) {
