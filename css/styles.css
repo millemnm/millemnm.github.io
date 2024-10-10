@@ -11045,6 +11045,15 @@ header.masthead .masthead-heading {
     margin-bottom: 4rem;
   }
 }
+.portfolio-item {
+  display: block; /* Ensure items take up full width */
+  position: relative;
+}
+
+.portfolio-caption {
+  text-align: center;
+}
+
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
