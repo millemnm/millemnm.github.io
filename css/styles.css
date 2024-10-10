@@ -11440,22 +11440,49 @@ section#contact form#contactForm :-ms-input-placeholder {
   cursor: pointer;
 }
 
+/* General service link styling */
 .service-link {
   margin-bottom: 3rem;
   text-align: center;
   color: inherit;
   text-decoration: none;
-  transition: border-color 0.3s ease; /* Smooth transition */
+  transition: all 0.3s ease-in-out;
 }
 
-.service-link:hover, .service-link:focus {
-  color: var(--bs-primary);
+/* Set the default state for the border with the correct transition */
+.service-link .custom-image-border {
+  border-color: #ced4da; /* Set the default grey border color */
+  border-width: 0.5rem; /* Ensure the border width is specified */
+  transition: border-color 0.4s ease-in-out; /* Ensure smooth transition for border color */
 }
 
-/* Hover state for the entire service link, including the image */
-.service-link:hover .custom-image-border,
+/* On hover, change the border color with a smooth transition */
+.service-link:hover .custom-image-border, 
 .service-link:focus .custom-image-border {
-  border-color: #c10909; /* Primary color */
+  border-color: #c10909; /* Set the primary red color for hover */
+  transition: border-color 0.4s ease-in-out; /* Ensure the hover state also transitions smoothly */
+}
+
+/* Smooth transition for the title (h4) and text */
+.service-link h4, .service-link p {
+  color: inherit; /* Start with the default color */
+  transition: color 0.3s ease-in-out; /* Apply transition for color change both in and out */
+}
+
+.service-link:hover h4, .service-link:focus h4,
+.service-link:hover p, .service-link:focus p {
+  color: #c10909; /* Set the hover text color */
+  transition: color 0.3s ease-in-out; /* Ensure transition happens on hover as well */
+}
+
+/* Smooth transition for the image */
+.service-link .img-fluid {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Ensure image opacity also fades smoothly */
+.service-link:hover .img-fluid {
+  opacity: 0.9; /* Example effect for fading */
 }
 
 .service-link:hover .fa-stack, .service-link:focus .fa-stack,
