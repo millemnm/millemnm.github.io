@@ -11055,17 +11055,74 @@ header.masthead .masthead-heading {
   display: block;
   margin: 0 auto;
 }
+/* Existing hover for image */
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   display: flex;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(193, 9, 9, 0.9);
+  background: rgba(193, 9, 9, 0.9); /* Correct red overlay */
+  color: var(--bs-primary);
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity ease-in-out 0.25s;
 }
+
+/* Make sure both the image and the text transition at the same speed */
+.portfolio-item:hover .portfolio-hover {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; /* Matching transition time for the image */
+}
+
+.portfolio-item:hover .portfolio-caption-heading {
+  color: #c10909;
+  transition: color 0.3s ease-in-out; /* Same transition time as the image */
+}
+
+/* Image hover effect */
+.portfolio-link .img-fluid {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Same speed as the hover */
+}
+
+/* Ensure hover effect is triggered when hovering over the entire portfolio item, not just the image */
+#portfolio .portfolio-item:hover .portfolio-hover {
+  opacity: 1;
+}
+
+/* Title styling with no underline */
+.portfolio-caption .portfolio-caption-heading {
+    color: black;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+/* Ensure title stays above the overlay */
+.portfolio-item .portfolio-caption {
+    z-index: 2; /* Keep the title above the red overlay */
+}
+
+/* Ensure default text has no underline */
+.portfolio-link.caption-link {
+  text-decoration: none; /* Remove underline by default */
+}
+
+/* Ensure the title remains without underline even on hover */
+.portfolio-link.caption-link:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/* Title styling */
+.portfolio-caption .portfolio-caption-heading {
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Change title color on hover */
+.portfolio-item:hover .portfolio-caption-heading {
+  color: #c10909; /* Your custom red */
+}
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
   font-size: 1.25rem;
   color: white;
@@ -11388,6 +11445,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   color: inherit;
   text-decoration: none;
+  transition: border-color 0.3s ease; /* Smooth transition */
 }
 
 .service-link:hover, .service-link:focus {
