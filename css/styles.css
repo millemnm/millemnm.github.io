@@ -11291,6 +11291,13 @@ header.masthead .masthead-heading {
   margin-bottom: 0;
 }
 
+/* make the portfolio/product modals never become 2 wide (comment out if you want it to be able to become 2 wide)  */
+/* @media (min-width: 768px) and (max-width: 991.98px) {
+  .col-md-6 {
+      width: 100%; /* Force 1 item per row
+  }
+} */
+
 @media (min-width: 768px) {
   .timeline:before {
     left: 50%;
@@ -11528,4 +11535,22 @@ section#contact form#contactForm :-ms-input-placeholder {
 /* CSS to apply rounded corners to images with the class 'rounded-image' */
 .rounded-img {
   border-radius: 20px; /* Adjust for more or less rounding */
+}
+
+@media (max-width: 576px) {
+  .btn {
+      padding: 20px 26px; /* Increase the padding */
+      font-size: 20px; /* Increase the font size */
+  }
+
+  .btn-icon-only {
+      padding: 20px; /* Larger padding for icon-only buttons */
+      font-size: 20px; /* Larger icon size */
+  }
+
+  /* Adjusting specific button sizes */
+  .btn-submit, .btn-jump, .btn-phone, .btn-email {
+      font-size: 20px; /* Larger text */
+      padding: 16px 24px; /* Larger padding */
+  }
 }
