@@ -48,6 +48,10 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Open modal using Bootstrap's JavaScript
+    var myModal = new bootstrap.Modal(document.getElementById('yourModalId'));
+    myModal.show();
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
@@ -88,4 +92,73 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+window.onload = function() {
+    getLocation();
+};
 
+
+// Function to get user's geolocation using IP API
+function getLocation() {
+    fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Location Data:', data);  // Log the full response data to see what's being returned
+            if (data.latitude && data.longitude) {
+                const userLatitude = data.latitude;
+                const userLongitude = data.longitude;
+
+                // console.log('User Latitude:', userLatitude);
+                // console.log('User Longitude:', userLongitude);
+
+                // After getting user's location, determine the closest factory
+                findClosestFactory(userLatitude, userLongitude);
+            } else {
+                console.error('Could not retrieve latitude and longitude');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching location:', error);
+        });
+}
+
+// Function to calculate the distance between two sets of lat/lon coordinates
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Radius of the Earth in kilometers
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    
+    const a = 
+        0.5 - Math.cos(dLat)/2 + 
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        (1 - Math.cos(dLon)) / 2;
+
+    return R * 2 * Math.asin(Math.sqrt(a)); // Distance in kilometers
+}
+
+// Coordinates of your factories
+const factories = {
+    newYork: { lat: 40.7128, lon: -74.0060, phone: '+17183612556' },   // New York
+    sanFrancisco: { lat: 37.7749, lon: -122.4194, phone: '+14158610112' }, // San Francisco
+    toronto: { lat: 43.6532, lon: -79.3832, phone: '+14167871201' }     // Toronto
+};
+
+// Function to find the closest factory based on user's location
+function findClosestFactory(userLat, userLon) {
+    let closestFactory = null;
+    let shortestDistance = Infinity;
+
+    // Iterate over each factory and calculate the distance
+    for (let factory in factories) {
+        const distance = calculateDistance(userLat, userLon, factories[factory].lat, factories[factory].lon);
+        if (distance < shortestDistance) {
+            shortestDistance = distance;
+            closestFactory = factories[factory];
+        }
+    }
+
+    // Update all buttons with the class "dynamic-call-button" with the closest factory's phone number
+    const callButtons = document.querySelectorAll('.dynamic-call-button');
+    callButtons.forEach(button => {
+        button.setAttribute('href', `tel:${closestFactory.phone}`);
+    });
+}
