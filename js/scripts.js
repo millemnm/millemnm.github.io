@@ -137,9 +137,9 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 
 // Coordinates of your factories
 const factories = {
-    newYork: { lat: 40.7128, lon: -74.0060, phone: '+17183612556' },   // New York
-    sanFrancisco: { lat: 37.7749, lon: -122.4194, phone: '+14158610112' }, // San Francisco
-    toronto: { lat: 43.6532, lon: -79.3832, phone: '+14167871201' }     // Toronto
+    newYork: { lat: 40.736240, lon: -73.933260, phone: '+17183612556' },   // New York
+    sanFrancisco: { lat: 37.764020, lon: -122.398290, phone: '+14158610112' }, // San Francisco
+    toronto: { lat: 43.705140, lon: -79.458390, phone: '+14167871201' }     // Toronto
 };
 
 // Function to find the closest factory based on user's location
