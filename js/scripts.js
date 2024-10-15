@@ -101,13 +101,13 @@ window.onload = function() {
 function getLocation() {
     if (sessionStorage.getItem('userLocation')) {
         const savedLocation = JSON.parse(sessionStorage.getItem('userLocation'));
-        // console.log('Using saved session location:', savedLocation);
+        console.log('Using saved session location:', savedLocation);
         findClosestFactory(savedLocation.latitude, savedLocation.longitude);
     } else {
         fetch('https://ipinfo.io/json?token=49669f6884fb0d')
             .then(response => response.json())
             .then(data => {
-                // console.log('Location Data:', data);
+                console.log('Location Data:', data);
                 if (data.loc) {
                     const [userLatitude, userLongitude] = data.loc.split(',');
 
