@@ -99,27 +99,30 @@ window.onload = function() {
 
 // Function to get user's geolocation using IP API
 function getLocation() {
-    fetch('https://ipinfo.io/json?token=49669f6884fb0d')
-        .then(response => response.json())
-        .then(data => {
-            console.log('Location Data:', data);  // Log the full response data to see what's being returned
-            
-            // ipinfo returns a 'loc' field which contains 'latitude,longitude'
-            if (data.loc) {
-                const [userLatitude, userLongitude] = data.loc.split(','); // Split the 'loc' field into latitude and longitude
+    if (sessionStorage.getItem('userLocation')) {
+        const savedLocation = JSON.parse(sessionStorage.getItem('userLocation'));
+        // console.log('Using saved session location:', savedLocation);
+        findClosestFactory(savedLocation.latitude, savedLocation.longitude);
+    } else {
+        fetch('https://ipinfo.io/json?token=49669f6884fb0d')
+            .then(response => response.json())
+            .then(data => {
+                // console.log('Location Data:', data);
+                if (data.loc) {
+                    const [userLatitude, userLongitude] = data.loc.split(',');
 
-                // console.log('User Latitude:', userLatitude);
-                // console.log('User Longitude:', userLongitude);
+                    // Save the user's location in sessionStorage
+                    sessionStorage.setItem('userLocation', JSON.stringify({ latitude: userLatitude, longitude: userLongitude }));
 
-                // After getting user's location, determine the closest factory
-                findClosestFactory(userLatitude, userLongitude);
-            } else {
-                console.error('Could not retrieve location data');
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching location:', error);
-        });
+                    findClosestFactory(userLatitude, userLongitude);
+                } else {
+                    console.error('Could not retrieve location data');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching location:', error);
+            });
+    }
 }
 
 
