@@ -99,13 +99,14 @@ window.onload = function() {
 
 // Function to get user's geolocation using IP API
 function getLocation() {
-    fetch('https://ipapi.co/json/')
+    fetch('https://ipinfo.io/json?token=49669f6884fb0d')
         .then(response => response.json())
         .then(data => {
             console.log('Location Data:', data);  // Log the full response data to see what's being returned
-            if (data.latitude && data.longitude) {
-                const userLatitude = data.latitude;
-                const userLongitude = data.longitude;
+            
+            // ipinfo returns a 'loc' field which contains 'latitude,longitude'
+            if (data.loc) {
+                const [userLatitude, userLongitude] = data.loc.split(','); // Split the 'loc' field into latitude and longitude
 
                 // console.log('User Latitude:', userLatitude);
                 // console.log('User Longitude:', userLongitude);
@@ -113,13 +114,14 @@ function getLocation() {
                 // After getting user's location, determine the closest factory
                 findClosestFactory(userLatitude, userLongitude);
             } else {
-                console.error('Could not retrieve latitude and longitude');
+                console.error('Could not retrieve location data');
             }
         })
         .catch(error => {
             console.error('Error fetching location:', error);
         });
 }
+
 
 // Function to calculate the distance between two sets of lat/lon coordinates
 function calculateDistance(lat1, lon1, lat2, lon2) {
