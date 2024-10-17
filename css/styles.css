@@ -11554,3 +11554,30 @@ section#contact form#contactForm :-ms-input-placeholder {
       padding: 16px 24px; /* Larger padding */
   }
 }
+
+/* Styling for the last timeline image */
+.timeline-inverted:last-child .timeline-image {
+  border: 5px solid #ccc; /* Default gray border */
+  display: inline-block;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 50%;
+  transition: border-color 0.3s ease;
+}
+
+.timeline-inverted:last-child .timeline-image:hover {
+  border-color: #daa520; /* Red color from your theme on hover */
+  cursor: pointer;
+}
+
+/* Ensure the text inside the image is centered */
+.timeline-inverted:last-child .timeline-image h4 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.small-break {
+  line-height: 0.8; /* Adjust this value as needed to control spacing */
+  display: block; /* Ensure it behaves like a block-level element */
+  margin-bottom: 0; /* Prevent additional margin below */
+}
