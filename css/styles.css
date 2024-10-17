@@ -11565,7 +11565,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .timeline-inverted:last-child .timeline-image:hover {
-  border-color: #daa520; /* Red color from your theme on hover */
+  border-color: #daa520;
   cursor: pointer;
 }
 
@@ -11576,8 +11576,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
 }
 
-.small-break {
-  line-height: 0.8; /* Adjust this value as needed to control spacing */
-  display: block; /* Ensure it behaves like a block-level element */
-  margin-bottom: 0; /* Prevent additional margin below */
+.smaller-break {
+  margin-top: 9px !important; /* Adjust this value as needed */
+  padding-top: 10px !important; /* You can try both margin and padding */
 }
