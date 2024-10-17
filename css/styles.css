@@ -11557,10 +11557,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Styling for the last timeline image */
 .timeline-inverted:last-child .timeline-image {
-  border: 5px solid #ccc; /* Default gray border */
+  border: 7px solid #e9ecef;
+  border-radius: 100%;
   display: inline-block;
   padding: 20px; /* Adjust padding as needed */
-  border-radius: 50%;
   transition: border-color 0.3s ease;
 }
 
