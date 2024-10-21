@@ -11564,7 +11564,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   border-radius: 100%;
   display: inline-block;
   padding: 20px; /* Adjust padding as needed */
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .timeline-inverted:last-child .timeline-image:hover {
