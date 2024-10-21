@@ -11734,3 +11734,7 @@ section#contact form#contactForm :-ms-input-placeholder {
       height: 2px;  /* Minimal height for smallest screens */
   }
 }
+
+.red-outline {
+  border-color: #c10909 !important;
+}
