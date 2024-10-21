@@ -15,20 +15,20 @@ window.addEventListener('DOMContentLoaded', event => {
         if (!navbarCollapsible) {
             return;
         }
-        if (window.scrollY <= 0) { // Adjusted to handle any scrollY less than or equal to 0
+        if (window.scrollY <= 0) {
             navbarCollapsible.classList.remove('navbar-shrink');
         } else {
             navbarCollapsible.classList.add('navbar-shrink');
         }
     };
 
-    // Shrink the navbar 
+    // Shrink the navbar
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
-    //  Activate Bootstrap scrollspy on the main nav element
+    // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
@@ -37,23 +37,9 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
-    // Close modal when clicking outside of the modal content
-    document.addEventListener('click', function (event) {
-        const modals = document.querySelectorAll('.modal.show'); // Get all active modals
-        modals.forEach(modal => {
-            const modalContent = modal.querySelector('.modal-content'); // Modal content
-            if (!modalContent.contains(event.target)) { // If click is outside modal content
-                bootstrap.Modal.getInstance(modal).hide(); // Close the modal using Bootstrap's hide method
-            }
-        });
-    });
-
-    // Open modal using Bootstrap's JavaScript
-    var myModal = new bootstrap.Modal(document.getElementById('yourModalId'));
-    myModal.show();
-
-    // Collapse responsive navbar when toggler is visible
+    // Collapse responsive navbar when toggler is visible and a link is clicked
     const navbarToggler = document.body.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarResponsive');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
@@ -64,6 +50,21 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    // Close navbar when clicking below the dropdown menu
+    function closeNavbarOnOutsideClick(event) {
+        const target = event.target;
+
+        // If the navbar is expanded and click is outside the navbarCollapse but not on the toggler, close it
+        if (navbarToggler.getAttribute('aria-expanded') === 'true' && 
+            !navbarCollapse.contains(target) && 
+            !navbarToggler.contains(target)) {
+            navbarToggler.click(); // This will close the dropdown
+        }
+    }
+
+    // Attach the event listener to close the dropdown when clicking outside
+    document.addEventListener('click', closeNavbarOnOutsideClick);
 
     // Sort list function
     function sortListsAlphabetically(listIds) {
