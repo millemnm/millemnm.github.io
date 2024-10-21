@@ -101,13 +101,13 @@ window.onload = function() {
 function getLocation() {
     if (sessionStorage.getItem('userLocation')) {
         const savedLocation = JSON.parse(sessionStorage.getItem('userLocation'));
-        console.log('Using saved session location:', savedLocation);
+        // console.log('Using saved session location:', savedLocation);
         findClosestFactory(savedLocation.latitude, savedLocation.longitude);
     } else {
         fetch('https://ipinfo.io/json?token=49669f6884fb0d')
             .then(response => response.json())
             .then(data => {
-                console.log('Location Data:', data);
+                // console.log('Location Data:', data);
                 if (data.loc) {
                     const [userLatitude, userLongitude] = data.loc.split(',');
 
@@ -116,11 +116,11 @@ function getLocation() {
 
                     findClosestFactory(userLatitude, userLongitude);
                 } else {
-                    console.error('Could not retrieve location data');
+                    // console.error('Could not retrieve location data');
                 }
             })
             .catch(error => {
-                console.error('Error fetching location:', error);
+                // console.error('Error fetching location:', error);
             });
     }
 }
@@ -167,3 +167,22 @@ function findClosestFactory(userLat, userLon) {
         button.setAttribute('href', `tel:${closestFactory.phone}`);
     });
 }
+
+//listen for form submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log("Form submission intercepted!");
+
+    const formData = new FormData(this);
+    fetch('send_form_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+    })
+    .catch(error => {
+        alert('There was an error sending the message. Please try again later.');
+    });
+});

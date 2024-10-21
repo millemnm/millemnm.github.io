@@ -1,7 +1,7 @@
 // config.js
 
 // Get environment (defaults to 'development' if not set)
-const env = process.env.NODE_ENV || 'production';
+const env = process.env.NODE_ENV || 'development';
 
 // Set PHP path based on the environment
 const config = {
