@@ -100,29 +100,44 @@ window.onload = function() {
 
 // Function to get user's geolocation using IP API
 function getLocation() {
-    if (sessionStorage.getItem('userLocation')) {
+    if (sessionStorage.getItem('userLocation') && sessionStorage.getItem('userCountry')) {
         const savedLocation = JSON.parse(sessionStorage.getItem('userLocation'));
-        // console.log('Using saved session location:', savedLocation);
+        const savedCountry = sessionStorage.getItem('userCountry');
+        
         findClosestFactory(savedLocation.latitude, savedLocation.longitude);
+        updateEmailBasedOnCountry(savedCountry);
     } else {
         fetch('https://ipinfo.io/json?token=49669f6884fb0d')
             .then(response => response.json())
             .then(data => {
-                // console.log('Location Data:', data);
                 if (data.loc) {
                     const [userLatitude, userLongitude] = data.loc.split(',');
-
-                    // Save the user's location in sessionStorage
+                    const userCountry = data.country;  // Retrieve country information
+                    
+                    // Save the user's location and country in sessionStorage
                     sessionStorage.setItem('userLocation', JSON.stringify({ latitude: userLatitude, longitude: userLongitude }));
+                    sessionStorage.setItem('userCountry', userCountry);
 
                     findClosestFactory(userLatitude, userLongitude);
+                    updateEmailBasedOnCountry(userCountry);
                 } else {
-                    // console.error('Could not retrieve location data');
+                    console.error('Could not retrieve location data');
                 }
             })
             .catch(error => {
-                // console.error('Error fetching location:', error);
+                console.error('Error fetching location:', error);
             });
+    }
+}
+
+// Function to update the email buttons if the user is in Canada
+function updateEmailBasedOnCountry(country) {
+    const emailButtons = document.querySelectorAll('.email-button');  // Get all email buttons with the class 'email-button'
+    
+    if (country === 'CA') {
+        emailButtons.forEach(button => {
+            button.setAttribute('href', 'mailto:info@firstspice.ca');
+        });
     }
 }
 
@@ -168,22 +183,3 @@ function findClosestFactory(userLat, userLon) {
         button.setAttribute('href', `tel:${closestFactory.phone}`);
     });
 }
-
-//listen for form submission
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log("Form submission intercepted!");
-
-    const formData = new FormData(this);
-    fetch('send_form_email.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => {
-        alert('There was an error sending the message. Please try again later.');
-    });
-});
